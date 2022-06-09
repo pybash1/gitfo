@@ -10,8 +10,14 @@ export default function Home() {
     router.push("/profile/"+username); 
   }
 
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      redirect();
+    }
+  }
+
   return (
-    <div className='dark:bg-gray-700 h-screen flex items-center justify-center'>
+    <div className='dark:bg-gray-800 h-screen flex items-center justify-center'>
       <Head>
         <title>GitFo - Home</title>
       </Head>
@@ -21,6 +27,7 @@ export default function Home() {
         <input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={(e) => {handleEnter(e)}}
           className="dark:bg-gray-900 dark:text-white w-full py-4 pl-3 pr-16 text-sm rounded-lg"
           id="username"
           type="username"

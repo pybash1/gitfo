@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function User() {
@@ -35,7 +34,11 @@ export default function User() {
     }, []);
 
     if (loading) {
-        return <p>Loading</p>
+        return (
+            <div className="flex items-center justify-center dark:bg-gray-800 h-screen">
+                <Head>GitFo - Loading...</Head>
+            </div>
+        )
     }
 
     if (data?.message === "Not Found") {

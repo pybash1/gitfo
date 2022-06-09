@@ -27,7 +27,11 @@ export default function User() {
     }, []);
 
     if (loading) {
-        return <p>Loading</p>
+        return (
+            <div className="flex items-center justify-center dark:bg-gray-800 h-screen">
+                <Head>GitFo - Loading...</Head>
+            </div>
+        )
     }
 
     if (data?.message === "Not Found") {
@@ -37,9 +41,9 @@ export default function User() {
     return (
         <div className='dark:bg-gray-800 h-screen flex items-center justify-center'>
             <Head>
-            <title>GitFo - Profile - {data?.login}</title>
+                <title>GitFo - Profile - {data?.login}</title>
             </Head>
-            <div className="fixed inset-x-0 bottom-0 px-4 pb-3">
+            {data?.hireable ? <div className="fixed inset-x-0 bottom-0 px-4 pb-3">
                 <div className="relative px-4 py-3 text-white bg-blue-600 rounded-lg pr-14">
                     <p className="text-sm font-medium text-left sm:text-center">
                     Loved the Profile? Then you will be glad to know that {data?.name} is looking for jobs!
@@ -47,7 +51,7 @@ export default function User() {
                     <a className="underline" href={`https://github.com/${data?.login}`}>Hire &rarr; </a>
                     </p>
                 </div>
-            </div>
+            </div> : null}
             <p
                 className="relative block p-8 overflow-hidden border border-gray-100 dark:border-none rounded-lg bg-gray-900"
                 >
@@ -143,7 +147,7 @@ export default function User() {
                                 href={`https://twitter.com/${data?.twitter_username}`}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
+                                className="block h-full p-4 border border-gray-700 rounded-lg hover:border-green-600"
                             >
                                 <h5 className="font-medium text-white">{data?.twitter_username}</h5>
 
@@ -159,7 +163,7 @@ export default function User() {
                                 href={data?.blog}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
+                                className="block h-full p-4 border border-gray-700 rounded-lg hover:border-green-600"
                             >
                                 <h5 className="font-medium text-white">Website</h5>
 
@@ -190,7 +194,7 @@ export default function User() {
                                 href={`https://github.com/${org.login}`}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
+                                className="block h-full p-4 border border-gray-700 rounded-lg hover:border-blue-600"
                             >
                                 <h5 className="font-medium text-white">{org.login}</h5>
 
