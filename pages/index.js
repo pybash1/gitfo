@@ -16,7 +16,7 @@ export default function Home() {
         <title>GitFo - Home</title>
       </Head>
       <div className="relative">
-        <label className="sr-only" for="username"> Email </label>
+        <label className="sr-only" htmlFor="username"> Email </label>
 
         <input
           value={username}
