@@ -142,6 +142,7 @@ export default function User() {
                             <a
                                 href={`https://twitter.com/${data?.twitter_username}`}
                                 target="_blank"
+                                rel="norefferer"
                                 className="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
                             >
                                 <h5 className="font-medium text-white">{data?.twitter_username}</h5>
@@ -157,6 +158,7 @@ export default function User() {
                             <a
                                 href={data?.blog}
                                 target="_blank"
+                                rel="norefferer"
                                 className="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
                             >
                                 <h5 className="font-medium text-white">Website</h5>
@@ -182,11 +184,12 @@ export default function User() {
                 </div>
 
                 <ul className="mt-4 space-y-2">
-                    {orgdata?.map(org => (
-                        <li>
+                    {orgdata?.map((org, ind) => (
+                        <li key={ind}>
                             <a
                                 href={`https://github.com/${org.login}`}
                                 target="_blank"
+                                rel="norefferer"
                                 className="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
                             >
                                 <h5 className="font-medium text-white">{org.login}</h5>

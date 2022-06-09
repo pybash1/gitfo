@@ -75,8 +75,8 @@ export default function User() {
             <section className="text-center">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 text-white">
                     <ul className="grid grid-cols-2 gap-4 border-2 border-blue-600 rounded-xl lg:grid-cols-4">
-                        {langsU?.map(lang => (
-                            <li className="p-8">
+                        {langsU?.map((lang, ind) => (
+                            <li key={ind} className="p-8">
                                 <p className="text-2xl font-extrabold text-blue-500">{langs.filter(item => item===lang).length}</p>
                                 <p className="mt-1 text-lg font-medium">{lang}</p>
                             </li>
@@ -85,8 +85,8 @@ export default function User() {
                 </div>
             </section>
             <div className="grid grid-cols-2 gap-8 p-10">
-                {data.map(repo => (
-                    <p
+                {data.map((repo, ind) => (
+                    <p key={ind}
                         className="relative block p-8 overflow-hidden border border-gray-100 dark:border-none rounded-lg bg-gray-900"
                         >
                         <span
