@@ -1,7 +1,9 @@
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function GitFo({ Component, pageProps }) {
+  return (
+    <Component {...pageProps} />
+  )
 }
 
-export default MyApp
+export default GitFo
