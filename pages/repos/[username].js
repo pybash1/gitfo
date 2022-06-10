@@ -67,7 +67,7 @@ export default function User() {
             <title>GitFo - Repositories</title>
             </Head>
             <section className="text-center">
-                <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 text-white">
+                <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 dark:text-white">
                     <ul className="grid grid-cols-2 gap-4 border-2 border-blue-600 rounded-xl lg:grid-cols-4">
                         <li className="p-8">
                             <p className="text-2xl font-extrabold text-blue-500">{forked.length}</p>
@@ -92,7 +92,7 @@ export default function User() {
                 </div>
             </section>
             <section className="text-center">
-                <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 text-white">
+                <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 lg:px-8 dark:text-white">
                     <ul className="grid grid-cols-2 gap-4 border-2 border-blue-600 rounded-xl lg:grid-cols-4">
                         {langsU?.map((lang, ind) => (
                             <li key={ind} className="p-8">
@@ -106,7 +106,7 @@ export default function User() {
             <div className="grid grid-cols-2 gap-8 p-10">
                 {data.map((repo, ind) => (
                     <p key={ind}
-                        className="relative block p-8 overflow-hidden border border-gray-100 dark:border-none rounded-lg bg-gray-900"
+                        className="relative block p-8 overflow-hidden border border-gray-100 dark:border-none rounded-lg bg-gray-100 dark:bg-gray-900"
                         >
                         <span
                             className="absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
@@ -143,43 +143,43 @@ export default function User() {
 
                             <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                 <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Stars</dt>
-                                <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.stargazers_count}</dd>
+                                <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.stargazers_count}</dd>
                             </div>
 
                             <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                 <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Watchers</dt>
-                                <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.watchers_count}</dd>
+                                <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.watchers_count}</dd>
                             </div>
 
                             <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                 <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Forks</dt>
-                                <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.forks_count}</dd>
+                                <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.forks_count}</dd>
                             </div>
 
                             {repo?.language ? (
                                 <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                     <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Language</dt>
-                                    <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.language}</dd>
+                                    <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.language}</dd>
                                 </div>
                             ) : null}
 
                             {repo?.location ? (
                                 <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                     <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Based in</dt>
-                                    <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.location}</dd>
+                                    <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.location}</dd>
                                 </div>
                             ) : null}
 
                             {repo?.license ? (
                                 <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                     <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">License</dt>
-                                    <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.license?.name}</dd>
+                                    <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.license?.name}</dd>
                                 </div>
                             ) : null}
                             
                             <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                 <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Issues</dt>
-                                <dd className="text-xs text-gray-50 dark:text-gray-300">{repo?.open_issues_count}</dd>
+                                <dd className="text-xs text-gray-500 dark:text-gray-300">{repo?.open_issues_count}</dd>
                             </div>
                         </dl>
                     </p>

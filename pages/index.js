@@ -7,7 +7,9 @@ export default function Home() {
   const router = useRouter();
 
   const redirect = () => {
-    router.push("/profile/"+username); 
+    if (username !== ""){
+      router.push("/profile/"+username); 
+    }
   }
 
   const handleEnter = (e) => {
@@ -28,7 +30,7 @@ export default function Home() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           onKeyDown={(e) => {handleEnter(e)}}
-          className="dark:bg-gray-900 dark:text-white w-full py-4 pl-3 pr-16 text-sm rounded-lg"
+          className="bg-gray-100 dark:bg-gray-900 dark:text-white w-full py-4 pl-3 pr-16 text-sm rounded-lg"
           id="username"
           type="username"
           placeholder="GitHub Username"

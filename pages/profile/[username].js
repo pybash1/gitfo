@@ -69,7 +69,7 @@ export default function User() {
                 </div>
             </div> : null}
             <p
-                className="relative block p-8 overflow-hidden border border-gray-100 dark:border-none rounded-lg bg-gray-900"
+                className="relative block p-8 overflow-hidden border border-gray-100 dark:border-none rounded-lg bg-gray-100 dark:bg-gray-900"
                 >
                 <span
                     className="absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
@@ -108,25 +108,25 @@ export default function User() {
 
                     <div className="flex flex-col-reverse ml-3 sm:ml-6">
                         <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Followers</dt>
-                        <dd className="text-xs text-gray-50 dark:text-gray-300">{data?.followers}</dd>
+                        <dd className="text-xs text-gray-500 dark:text-gray-300">{data?.followers}</dd>
                     </div>
 
                     <div className="flex flex-col-reverse ml-3 sm:ml-6">
                         <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Following</dt>
-                        <dd className="text-xs text-gray-50 dark:text-gray-300">{data?.following}</dd>
+                        <dd className="text-xs text-gray-500 dark:text-gray-300">{data?.following}</dd>
                     </div>
 
                     {data?.company ? (
                         <div className="flex flex-col-reverse ml-3 sm:ml-6">
                             <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Currently Working For</dt>
-                            <dd className="text-xs text-gray-50 dark:text-gray-300">{data?.company}</dd>
+                            <dd className="text-xs text-gray-500 dark:text-gray-300">{data?.company}</dd>
                         </div>
                     ) : null}
 
                     {data?.location ? (
                         <div className="flex flex-col-reverse ml-3 sm:ml-6">
                             <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Based in</dt>
-                            <dd className="text-xs text-gray-50 dark:text-gray-300">{data?.location}</dd>
+                            <dd className="text-xs text-gray-500 dark:text-gray-300">{data?.location}</dd>
                         </div>
                     ) : null}
 
@@ -134,23 +134,23 @@ export default function User() {
                         <a>
                             <div className="flex flex-col-reverse ml-3 sm:ml-6">
                                 <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Repositories</dt>
-                                <dd className="text-xs text-gray-50 dark:text-gray-300">{data?.public_repos}</dd>
+                                <dd className="text-xs text-gray-500 dark:text-gray-300">{data?.public_repos}</dd>
                             </div>    
                         </a>
                     </Link>
 
                     <div className="flex flex-col-reverse ml-3 sm:ml-6">
                         <dt className="text-sm font-medium text-gray-600 dark:text-gray-300">Gists</dt>
-                        <dd className="text-xs text-gray-50 dark:text-gray-300">{data?.public_gists}</dd>
+                        <dd className="text-xs text-gray-500 dark:text-gray-300">{data?.public_gists}</dd>
                     </div>
                 </dl>
             </p>
             &nbsp;&nbsp;
             {!data?.twitter_username && !data?.blog ? null : (
-            <article className="p-4 bg-gray-900 rounded-xl">
+            <article className="p-4 bg-gray-100 dark:bg-gray-900 rounded-xl">
                 <div className="flex items-center">
                     <div className="ml-3">
-                    <h5 className="text-lg font-medium text-white">Socials</h5>
+                    <h5 className="text-lg font-medium dark:text-white">Socials</h5>
                     <div className="flow-root">
                     </div>
                     </div>
@@ -165,9 +165,9 @@ export default function User() {
                                 rel="noreferrer"
                                 className="block h-full p-4 border border-gray-700 rounded-lg hover:border-green-600"
                             >
-                                <h5 className="font-medium text-white">{data?.twitter_username}</h5>
+                                <h5 className="font-medium dark:text-white">{data?.twitter_username}</h5>
 
-                                <p className="mt-1 text-xs font-medium text-gray-300">
+                                <p className="mt-1 text-xs font-medium text-gray-500 dark:text-gray-300">
                                 {data?.name}&apos;s twitter!
                                 </p>
                             </a>
@@ -181,9 +181,9 @@ export default function User() {
                                 rel="noreferrer"
                                 className="block h-full p-4 border border-gray-700 rounded-lg hover:border-green-600"
                             >
-                                <h5 className="font-medium text-white">Website</h5>
+                                <h5 className="font-medium dark:text-white">Website</h5>
 
-                                <p className="mt-1 text-xs font-medium text-gray-300">
+                                <p className="mt-1 text-xs font-medium text-gray-500 dark:text-gray-300">
                                 {data?.name}&apos;s website!
                                 </p>
                             </a>
@@ -194,10 +194,10 @@ export default function User() {
             )}
             &nbsp;&nbsp;
             {orgdata?.length===0 ? null : (
-            <article className="p-4 bg-gray-900 rounded-xl">
+            <article className="p-4 bg-gray-100 dark:bg-gray-900 rounded-xl">
                 <div className="flex items-center">
                     <div className="ml-3">
-                    <h5 className="text-lg font-medium text-white">Organizations</h5>
+                    <h5 className="text-lg font-medium dark:text-white">Organizations</h5>
                     <div className="flow-root">
                     </div>
                     </div>
@@ -212,9 +212,9 @@ export default function User() {
                                 rel="noreferrer"
                                 className="block h-full p-4 border border-gray-700 rounded-lg hover:border-blue-600"
                             >
-                                <h5 className="font-medium text-white">{org.login}</h5>
+                                <h5 className="font-medium dark:text-white">{org.login}</h5>
 
-                                <p className="mt-1 text-xs font-medium text-gray-300">
+                                <p className="mt-1 text-xs font-medium text-gray-500 dark:text-gray-300">
                                 {org.description}
                                 </p>
                             </a>
